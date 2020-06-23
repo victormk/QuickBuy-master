@@ -1,0 +1,11 @@
+{
+  "!Chave": "ValorChave",
+  "ConnectionStrings": {
+    "SqlServerConnection" :  "",
+    "QuickBuyDB": "Server=localhost;Port=1234;Database=QuickBuyDB;Uid=root;Pwd=admin;"
+  }
+}
+
+
+
+
