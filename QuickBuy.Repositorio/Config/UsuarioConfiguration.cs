@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using QuickBuy.Dominio.Entidades;
 
 namespace QuickBuy.Repositorio.Config
 {
@@ -9,15 +10,15 @@ namespace QuickBuy.Repositorio.Config
             builder.HasKey(u => u.Id);
 
             builder.
-                Property(u => u.Email).
-                IsRequired().
-                HasMaxLength(50);
+                Property(u => u.Email)
+                .IsRequired()
+                .HasMaxLength(50);
 
             builder.HasKey(u => u.Nome);
             builder.
-                Property(u => u.Email).
-                IsRequired().
-                HasMaxLength(50);
+                Property(u => u.Email)
+                .IsRequired()
+                .HasMaxLength(50);
 
             builder.HasKey(u => u.Sobrenome);
             builder.
@@ -30,6 +31,11 @@ namespace QuickBuy.Repositorio.Config
                 Property(u => u.Senha).
                 IsRequired().
                 HasMaxLength(500);
+
+            builder
+                .HasMany(u => u.Pedidos)
+                .WithOne(p => p.Usuario);
+
 
         }
     }
